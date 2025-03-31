@@ -8,7 +8,7 @@ This API allows fetching non-fork GitHub repositories of a given user, including
 
 ### Endpoint
 
-`GET /repositories/{username}`
+`GET http://localhost:8080/repository/{username}`
 
 ### Example Response
 
