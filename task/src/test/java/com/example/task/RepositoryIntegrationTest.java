@@ -21,7 +21,7 @@ class RepositoryIntegrationTest {
 
     @Test
     void returnNotForkRepositoriesWithBranches() throws Exception {
-        mockMvc.perform(get(URL + "/repository"))
+        mockMvc.perform(get(URL + "/repository/Mredosz"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[1].RepositoryName").value("JAZ-Project"))
                 .andExpect(jsonPath("$[1].OwnerLogin").value("Mredosz"))
@@ -31,7 +31,7 @@ class RepositoryIntegrationTest {
 
     @Test
     void return404StatusCode() throws Exception {
-        mockMvc.perform(get(URL + "/repository"))
+        mockMvc.perform(get(URL + "/repository/jcdhsauijdhsa"))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("message").value("Didn't found repositories for this username"))
                 .andExpect(jsonPath("status").value("404"));
